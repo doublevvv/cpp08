@@ -6,7 +6,7 @@
 /*   By: doublevv <vv>                              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/19 11:43:49 by doublevv          #+#    #+#             */
-/*   Updated: 2025/05/19 13:42:24 by doublevv         ###   ########.fr       */
+/*   Updated: 2025/05/20 06:58:11 by doublevv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,10 @@ void	easyfind(T &container, int nbr)
 	for (; i < container.end(); i++)
 	{
 		if (nbr == *i)
-			std::cout << "ok" << std::endl;
+		{
+			std::cout << "ok : " << *i <<  std::endl;
+			break ;
+		}
 		else
 			std::cout << "ko" << std::endl;
 	}

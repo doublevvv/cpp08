@@ -6,13 +6,13 @@
 #    By: doublevv <vv>                              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/19 09:05:17 by doublevv          #+#    #+#              #
-#    Updated: 2025/05/20 06:55:26 by doublevv         ###   ########.fr        #
+#    Updated: 2025/05/20 13:13:35 by doublevv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = easyfind
+NAME = span
 
-SOURCES = main.cpp
+SOURCES = main.cpp Span.cpp
 
 SRCS = $(SOURCES)
 
