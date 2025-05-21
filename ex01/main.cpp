@@ -6,7 +6,7 @@
 /*   By: doublevv <vv>                              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 07:00:28 by doublevv          #+#    #+#             */
-/*   Updated: 2025/05/20 13:20:06 by doublevv         ###   ########.fr       */
+/*   Updated: 2025/05/21 13:26:44 by doublevv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,16 @@
 
 int	main()
 {
-	std::vector<int> array;
-	Span<int>	instance(5);
-	unsigned int nbr = rand();
+	Span sp = Span(1);
 
-	instance.addNumber(array, nbr);
-	instance.sort_array(array);
-	instance.shortestSpan(array);
-	instance.longestSpan(array);
+	sp.addNumber(9);
+	// sp.addNumber(8);
+	// sp.addNumber(50);
+	// sp.addNumber(5);
+
+
+	// std::cout << sp.shortestSpan() << std::endl;
+	// std::cout << sp.longestSpan() << std::endl;
+
 	return (0);
 }
