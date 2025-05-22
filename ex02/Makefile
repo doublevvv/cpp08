@@ -6,13 +6,13 @@
 #    By: doublevv <vv>                              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/19 09:05:17 by doublevv          #+#    #+#              #
-#    Updated: 2025/05/22 09:42:26 by doublevv         ###   ########.fr        #
+#    Updated: 2025/05/22 11:58:59 by doublevv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = span
+NAME = mutantstack
 
-SOURCES = main.cpp Span.cpp
+SOURCES = main.cpp
 
 SRCS = $(SOURCES)
 
@@ -24,7 +24,7 @@ OBJS = $(SRCS:.cpp=.o)
 
 CXX = c++
 
-CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -MMD -g
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -MMD
 
 
 RM = rm -rf

@@ -6,7 +6,7 @@
 /*   By: doublevv <vv>                              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 10:35:29 by doublevv          #+#    #+#             */
-/*   Updated: 2025/05/21 13:25:08 by doublevv         ###   ########.fr       */
+/*   Updated: 2025/05/22 10:05:31 by doublevv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ Span::Span() : _array(0), _size(0)
 
 Span::Span(unsigned int maxnbr) : _size(maxnbr)
 {
+	if (maxnbr == 0)
+		throw std::invalid_argument("array is empty");
 	std::cout << "Span Default Constructor called" << std::endl;
 }
 
@@ -27,7 +29,7 @@ Span::Span(const Span &obj) : _array(0)
 	std::cout << "Span Copy Constructor called" << std::endl;
 	(*this) = obj;
 }
-//Destructor
+
 Span::~Span()
 {
 	std::cout << "Span Destructor called " << std::endl;
@@ -42,29 +44,18 @@ Span &Span::operator=(const Span &rhs)
 	return (*this);
 }
 
-const char *Span::Arrayfull::what() const throw()
-{
-	return ("Array is full\n");
-}
-
-const char *Span::NotEnough::what() const throw()
-{
-	return ("Not enough number or empty\n");
-}
-
 void	Span::addNumber(int n)
 {
-	if (_size < 2)
-	{
-		throw NotEnough();
-		return ;
-	}
 	_array.push_back(n);
 	return ;
 }
 
 int	Span::shortestSpan()
 {
+	if (_array.size() < 2)
+		throw std::invalid_argument("Not enough number\n");
+	else if (_array.size() > _size)
+		throw std::invalid_argument("array is full\n");
 	std::sort(_array.begin(), _array.end());
 	int min = *(_array.end() - 1);
 	std::cout << min << std::endl;
@@ -80,6 +71,10 @@ int	Span::shortestSpan()
 
 int	Span::longestSpan()
 {
+	if (_array.size() < 2)
+		throw std::invalid_argument("Not enough number\n");
+	else if (_array.size() > _size)
+		throw std::invalid_argument("array is full\n");
 	int max;
 	std::sort(_array.begin(), _array.end());
 	max = *(_array.end() - 1) - *_array.begin();

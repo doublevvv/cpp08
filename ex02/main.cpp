@@ -5,25 +5,34 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: doublevv <vv>                              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/20 07:00:28 by doublevv          #+#    #+#             */
-/*   Updated: 2025/05/22 09:35:14 by doublevv         ###   ########.fr       */
+/*   Created: 2025/05/22 11:39:01 by doublevv          #+#    #+#             */
+/*   Updated: 2025/05/22 12:41:27 by doublevv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Span.hpp"
+#include "MutantStack.hpp"
 
-int	main()
+int main()
 {
-	Span sp = Span(0);
-
-	sp.addNumber(9);
-	sp.addNumber(8);
-	// sp.addNumber(50);
-	// sp.addNumber(5);
-
-
-	std::cout << sp.shortestSpan() << std::endl;
-	std::cout << sp.longestSpan() << std::endl;
-
+	MutantStack<int> mstack;
+	mstack.push(5);
+	mstack.push(17);
+	std::cout << mstack.top() << std::endl;
+	mstack.pop();
+	std::cout << mstack.size() << std::endl;
+	mstack.push(3);
+	mstack.push(5);
+	mstack.push(737);
+	mstack.push(0);
+	MutantStack<int>::iterator it = mstack.begin();
+	MutantStack<int>::iterator ite = mstack.end();
+	++it;
+	--it;
+	while (it != ite)
+	{
+	std::cout << *it << std::endl;
+	++it;
+	}
+	std::stack<int> s(mstack);
 	return (0);
 }
