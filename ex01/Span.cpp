@@ -6,7 +6,7 @@
 /*   By: doublevv <vv>                              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 10:35:29 by doublevv          #+#    #+#             */
-/*   Updated: 2025/05/22 10:05:31 by doublevv         ###   ########.fr       */
+/*   Updated: 2025/05/26 10:14:59 by doublevv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ Span::Span() : _array(0), _size(0)
 Span::Span(unsigned int maxnbr) : _size(maxnbr)
 {
 	if (maxnbr == 0)
-		throw std::invalid_argument("array is empty");
+		throw Empty();
 	std::cout << "Span Default Constructor called" << std::endl;
 }
 
@@ -33,6 +33,22 @@ Span::Span(const Span &obj) : _array(0)
 Span::~Span()
 {
 	std::cout << "Span Destructor called " << std::endl;
+}
+
+
+const char *Span::Empty::what() const throw()
+{
+	return ("array is empty\n");
+}
+
+const char *Span::NotEnough::what() const throw()
+{
+	return ("not enough numbers\n");
+}
+
+const char *Span::Full::what() const throw()
+{
+	return ("Error : array is fulllll\n");
 }
 
 //Operator Overload
@@ -53,7 +69,7 @@ void	Span::addNumber(int n)
 int	Span::shortestSpan()
 {
 	if (_array.size() < 2)
-		throw std::invalid_argument("Not enough number\n");
+		throw NotEnough();
 	else if (_array.size() > _size)
 		throw std::invalid_argument("array is full\n");
 	std::sort(_array.begin(), _array.end());
@@ -72,9 +88,9 @@ int	Span::shortestSpan()
 int	Span::longestSpan()
 {
 	if (_array.size() < 2)
-		throw std::invalid_argument("Not enough number\n");
+		throw NotEnough();
 	else if (_array.size() > _size)
-		throw std::invalid_argument("array is full\n");
+		throw Full();
 	int max;
 	std::sort(_array.begin(), _array.end());
 	max = *(_array.end() - 1) - *_array.begin();

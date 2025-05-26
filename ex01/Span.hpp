@@ -6,7 +6,7 @@
 /*   By: doublevv <vv>                              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 07:01:01 by doublevv          #+#    #+#             */
-/*   Updated: 2025/05/22 09:21:04 by doublevv         ###   ########.fr       */
+/*   Updated: 2025/05/26 10:08:24 by doublevv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,23 @@
 class Span
 {
 	public:
+		class Empty : public std::exception
+		{
+		public:
+			virtual const char* what() const throw();
+		};
+
+		class NotEnough : public std::exception
+		{
+		public:
+			virtual const char* what() const throw();
+		};
+
+		class Full : public std::exception
+		{
+		public:
+			virtual const char* what() const throw();
+		};
 		~Span();
 		Span(unsigned int nbrmax);
 		Span(const Span &obj);

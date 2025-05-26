@@ -6,7 +6,7 @@
 /*   By: doublevv <vv>                              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 07:00:28 by doublevv          #+#    #+#             */
-/*   Updated: 2025/05/22 09:35:14 by doublevv         ###   ########.fr       */
+/*   Updated: 2025/05/26 10:15:15 by doublevv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,22 @@
 
 int	main()
 {
-	Span sp = Span(0);
+	try
+	{
+		Span sp = Span(0);
 
-	sp.addNumber(9);
-	sp.addNumber(8);
-	// sp.addNumber(50);
-	// sp.addNumber(5);
+		sp.addNumber(9);
+		// sp.addNumber(8);
+		// sp.addNumber(50);
+		// sp.addNumber(5);
 
 
-	std::cout << sp.shortestSpan() << std::endl;
-	std::cout << sp.longestSpan() << std::endl;
+		std::cout << sp.shortestSpan() << std::endl;
+		std::cout << sp.longestSpan() << std::endl;
 
-	return (0);
+	}
+	catch(std::exception const &e)
+	{
+		std::cerr << e.what();
+	}
 }

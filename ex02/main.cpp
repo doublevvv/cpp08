@@ -6,7 +6,7 @@
 /*   By: doublevv <vv>                              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/22 11:39:01 by doublevv          #+#    #+#             */
-/*   Updated: 2025/05/22 12:41:27 by doublevv         ###   ########.fr       */
+/*   Updated: 2025/05/26 09:28:39 by doublevv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ int main()
 	mstack.push(5);
 	mstack.push(737);
 	mstack.push(0);
-	MutantStack<int>::iterator it = mstack.begin();
-	MutantStack<int>::iterator ite = mstack.end();
+	MutantStack<int>::it it = mstack.begin();
+	MutantStack<int>::it ite = mstack.end();
 	++it;
 	--it;
 	while (it != ite)
